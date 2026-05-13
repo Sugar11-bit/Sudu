@@ -1115,7 +1115,7 @@ function filterBooks(category, event) {
 // ========== UTILITY FUNCTIONS ==========
 
 /**
- * Format giá tiền VND
+ * Format giá tiền VND như trong lab thực hành
  */
 function formatPrice(price) {
     return new Intl.NumberFormat('vi-VN', {
