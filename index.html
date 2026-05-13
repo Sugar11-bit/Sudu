@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudu Secret Vault - Mở khóa tri thức bị lãng quên</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="container header-content">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📜</span>
+                <span class="logo-text">Sudu Secret Vault</span>
+            </a>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link active">Trang chủ</a>
+                <a href="templates/sach.html" class="nav-link">Thư viện</a>
+                <a href="templates/sach-hiem.html" class="nav-link">Sách hiếm</a>
+                <a href="templates/hoi-vien.html" class="nav-link">Hội viên</a>
+                <a href="templates/gio-hang.html" class="nav-link cart-link">
+
+                    Giỏ hàng
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <a href="templates/lab-thuc-hanh.html" class="nav-link">Lab TH</a>
+            </nav>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Tìm kiếm sách cổ...">
+                <button class="search-btn" onclick="searchBooks()">🔍</button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Mở khóa tri thức bị lãng quên</h1>
+            <p class="hero-subtitle">Khám phá kho tàng sách cổ, bí ẩn từ nghìn năm</p>
+            <a href="templates/sach.html" class="btn btn-primary btn-glow">
+                <span class="btn-icon">🔓</span>
+                Mở niêm phong
+            </a>
+        </div>
+        <!-- Floating mystical elements -->
+        <div class="mystical-particles">
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+            <span class="particle"></span>
+        </div>
+    </section>
+
+    <!-- ========== FEATURED BOOKS ========== -->
+    <section class="section featured-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-decoration">✦</span>
+                Sách nổi bật
+                <span class="title-decoration">✦</span>
+            </h2>
+            <div class="books-grid" id="featured-books">
+                <!-- Books will be loaded by JavaScript -->
+            </div>
+            <div class="section-footer">
+                <a href="templates/sach.html" class="btn btn-secondary">Xem tất cả sách</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CATEGORIES ========== -->
+    <section class="section categories-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-decoration">✦</span>
+                Thể loại
+                <span class="title-decoration">✦</span>
+            </h2>
+            <div class="categories-grid">
+                <a href="templates/sach.html?category=cothu" class="category-card">
+                    <span class="category-icon"> <img src="images/icon/iconcothu.jpg" alt="Cổ thư" width="50"
+                            height="50"> </span>
+                    <span class="category-name">Cổ thư</span>
+                </a>
+                <a href="templates/sach.html?category=hiem" class="category-card">
+                    <span class="category-icon"> <img src="images/icon/book.png" alt="Sách hiếm" width="50" height="50">
+                    </span>
+                    <span class="category-name">Sách hiếm</span>
+                </a>
+                <a href="templates/sach.html?category=cam" class="category-card">
+                    <span class="category-icon">🔏</span>
+                    <span class="category-name">Sách cấm</span>
+                </a>
+                <a href="templates/sach.html?category=thanhuan" class="category-card">
+                    <span class="category-icon">🌟</span>
+                    <span class="category-name">Thánh huấn</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="section about-section">
+        <div class="container about-content">
+            <div class="about-text">
+                <h2 class="section-title">Về Sudu Secret Vault</h2>
+                <p>Chúng tôi là những người gìn giữ tri thức cổ đại, sưu tầm và số hóa những cuốn sách quý hiếm từ khắp
+                    nơi trên thế giới.</p>
+                <p>Từ Sơn Hải Kinh đến các văn bản bí mật phương Tây, mỗi cuốn sách đều chứa đựng những hiểu biết sâu
+                    sắc về vũ trụ và con người.</p>
+                <a href="templates/gioi-thieu.html" class="btn btn-outline">Tìm hiểu thêm</a>
+            </div>
+            <div class="about-image">
+                <div class="mystical-book">
+                    <span class="book-glow"></span>
+                    📖
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">📜</span>
+                <span class="logo-text">Sudu Secret Vault</span>
+                <p class="footer-tagline">Gìn giữ tri thức nghìn năm</p>
+            </div>
+            <div class="footer-links">
+                <h4>SUDU</h4>
+                <a href="templates/gioi-thieu.html">Giới thiệu</a>
+                <a href="templates/lien-he.html">Liên hệ</a>
+                <a href="templates/hoi-vien.html">Hội viên</a>
+            </div>
+            <div class="footer-links">
+                <h4>Thể loại</h4>
+                <a href="templates/sach.html">Thư viện</a>
+                <a href="templates/sach-hiem.html">Sách hiếm</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy;Họ và tên: Hỷ Ngọc Đường | MSSV: DH52300440 | Lớp: D23_TH06 | T3C4. Dự án học tập.</p>
+
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script>
+        // Load featured books on homepage
+        document.addEventListener('DOMContentLoaded', function () {
+            loadFeaturedBooks();
+            updateCartCount();
+        });
+    </script>
+</body>
+
+</html>

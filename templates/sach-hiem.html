@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sách hiếm - Sudu Secret Vault</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">📜</span>
+                <span class="logo-text">Sudu Secret Vault</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="../index.html" class="nav-link">Trang chủ</a>
+                <a href="sach.html" class="nav-link">Thư viện</a>
+                <a href="sach-hiem.html" class="nav-link active">Sách hiếm</a>
+                <a href="hoi-vien.html" class="nav-link">Hội viên</a>
+                <a href="gio-hang.html" class="nav-link cart-link">
+                    Giỏ hàng
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <a href="lab-thuc-hanh.html" class="nav-link">Lab Thực Hành</a>
+            </nav>
+
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Tìm kiếm sách cổ...">
+                <button class="search-btn" onclick="searchBooks()">🔍</button>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- ========== PAGE TITLE ========== -->
+    <div class="page-title">
+        <div class="container">
+            <h1>💎 Sách hiếm & Cổ vật</h1>
+            <p class="text-muted">Những bản sách quý hiếm nhất trong kho tàng</p>
+        </div>
+    </div>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="library-page">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="../index.html">Trang chủ</a> / <span>Sách hiếm</span>
+            </div>
+
+            <!-- Info Box -->
+            <div class="question-gate mb-lg">
+                <h3>🔮 Bộ sưu tập đặc biệt</h3>
+                <p>Đây là những cuốn sách được sưu tầm từ các bộ sưu tập tư nhân, thư viện cổ và di tích lịch sử. Mỗi
+                    cuốn sách đều có số lượng giới hạn và giá trị sưu tầm cao.</p>
+            </div>
+
+            <!-- Books Grid -->
+            <div class="books-grid" id="rare-books">
+                <!-- Rare books will be loaded by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">📜</span>
+                <span class="logo-text">Sudu Secret Vault</span>
+                <p class="footer-tagline">Gìn giữ tri thức nghìn năm</p>
+            </div>
+            <div class="footer-links">
+                <h4>Liên kết</h4>
+                <a href="gioi-thieu.html">Giới thiệu</a>
+                <a href="lien-he.html">Liên hệ</a>
+                <a href="hoi-vien.html">Hội viên</a>
+            </div>
+            <div class="footer-links">
+                <h4>Thể loại</h4>
+                <a href="sach.html">Thư viện</a>
+                <a href="sach-hiem.html">Sách hiếm</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sudu Secret Vault. Dự án học tập.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            updateCartCount();
+
+            // Load rare books (books with 'hiem' tag)
+            const container = document.getElementById('rare-books');
+            if (container) {
+                const rareBooks = booksData.filter(book => book.tags.includes('hiem'));
+
+                if (rareBooks.length === 0) {
+                    container.innerHTML = '<p class="text-center text-muted">Chưa có sách hiếm nào.</p>';
+                } else {
+                    container.innerHTML = rareBooks.map(book => createBookCard(book)).join('');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

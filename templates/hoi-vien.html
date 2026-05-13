@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hội viên - Sudu Secret Vault</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">📜</span>
+                <span class="logo-text">Sudu Secret Vault</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="../index.html" class="nav-link">Trang chủ</a>
+                <a href="sach.html" class="nav-link">Thư viện</a>
+                <a href="sach-hiem.html" class="nav-link">Sách hiếm</a>
+                <a href="hoi-vien.html" class="nav-link active">Hội viên</a>
+                <a href="gio-hang.html" class="nav-link cart-link">
+                    Giỏ hàng
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <a href="lab-thuc-hanh.html" class="nav-link">Lab Thực Hành</a>
+            </nav>
+
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Tìm kiếm sách cổ...">
+                <button class="search-btn" onclick="searchBooks()">🔍</button>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- ========== PAGE TITLE ========== -->
+    <div class="page-title">
+        <div class="container">
+            <h1>👑 Hội viên Premium</h1>
+            <p class="text-muted">Mở khóa toàn bộ kho tàng tri thức</p>
+        </div>
+    </div>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="library-page">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="../index.html">Trang chủ</a> / <span>Hội viên</span>
+            </div>
+
+            <!-- Benefits Section -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="title-decoration">✦</span>
+                    Quyền lợi hội viên
+                    <span class="title-decoration">✦</span>
+                </h2>
+                <div class="member-benefits">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🔓</div>
+                        <h3 class="benefit-title">Mở khóa sách cấm</h3>
+                        <p class="benefit-desc">Truy cập tất cả các sách bị niêm phong và nội dung độc quyền.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💰</div>
+                        <h3 class="benefit-title">Giảm giá 30%</h3>
+                        <p class="benefit-desc">Giảm giá đặc biệt cho mọi đơn hàng sách điện tử.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📬</div>
+                        <h3 class="benefit-title">Sách mới mỗi tuần</h3>
+                        <p class="benefit-desc">Nhận thông báo và truy cập sớm các bản phát hành mới.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎓</div>
+                        <h3 class="benefit-title">Khóa học độc quyền</h3>
+                        <p class="benefit-desc">Tham gia các khóa học về văn bản cổ và triết học phương Đông.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💬</div>
+                        <h3 class="benefit-title">Cộng đồng riêng</h3>
+                        <p class="benefit-desc">Tham gia thảo luận với các học giả và người yêu sách cổ.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎁</div>
+                        <h3 class="benefit-title">Quà tặng đặc biệt</h3>
+                        <p class="benefit-desc">Nhận các ấn phẩm giới hạn và quà tặng từ Sudu Vault.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Plans -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="title-decoration">✦</span>
+                    Gói hội viên
+                    <span class="title-decoration">✦</span>
+                </h2>
+                <div class="categories-grid" style="max-width: 900px; margin: 0 auto;">
+                    <!-- Monthly -->
+                    <div class="category-card" style="padding: 2rem;">
+                        <span class="category-icon">📅</span>
+                        <span class="category-name">Hàng tháng</span>
+                        <div class="product-price" style="margin: 1rem 0;">99.000 ₫</div>
+                        <p class="text-muted mb-md">/ tháng</p>
+                        <button class="btn btn-outline" onclick="showToast('Chức năng demo - Chưa khả dụng', 'error')">
+                            Đăng ký ngay
+                        </button>
+                    </div>
+
+                    <!-- Yearly - Recommended -->
+                    <div class="category-card" style="padding: 2rem; border: 2px solid var(--color-accent);">
+                        <span class="premium-badge"
+                            style="position: relative; top: 0; right: 0; margin-bottom: 1rem;">Tiết kiệm 40%</span>
+                        <span class="category-icon">⭐</span>
+                        <span class="category-name">Hàng năm</span>
+                        <div class="product-price" style="margin: 1rem 0;">699.000 ₫</div>
+                        <p class="text-muted mb-md">/ năm</p>
+                        <button class="btn btn-accent" onclick="showToast('Chức năng demo - Chưa khả dụng', 'error')">
+                            Đăng ký ngay
+                        </button>
+                    </div>
+
+                    <!-- Lifetime -->
+                    <div class="category-card" style="padding: 2rem;">
+                        <span class="category-icon">♾️</span>
+                        <span class="category-name">Trọn đời</span>
+                        <div class="product-price" style="margin: 1rem 0;">1.999.000 ₫</div>
+                        <p class="text-muted mb-md">một lần</p>
+                        <button class="btn btn-outline" onclick="showToast('Chức năng demo - Chưa khả dụng', 'error')">
+                            Đăng ký ngay
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="section">
+                <div class="question-gate" style="max-width: 800px; margin: 0 auto;">
+                    <h3>❓ Câu hỏi thường gặp</h3>
+                    <div style="text-align: left; margin-top: 1.5rem;">
+                        <p class="mb-md"><strong class="text-accent">Hội viên có được hoàn tiền không?</strong><br>
+                            <span class="text-muted">Có, bạn có thể yêu cầu hoàn tiền trong 7 ngày đầu nếu không hài
+                                lòng.</span>
+                        </p>
+
+                        <p class="mb-md"><strong class="text-accent">Tôi có thể hủy bất cứ lúc nào không?</strong><br>
+                            <span class="text-muted">Có, bạn có thể hủy đăng ký bất cứ lúc nào từ trang cài đặt tài
+                                khoản.</span>
+                        </p>
+
+                        <p><strong class="text-accent">Sách cấm là gì?</strong><br>
+                            <span class="text-muted">Đó là những văn bản hiếm, từng bị cấm lưu hành trong lịch sử. Chỉ
+                                hội viên Premium mới được truy cập.</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">📜</span>
+                <span class="logo-text">Sudu Secret Vault</span>
+                <p class="footer-tagline">Gìn giữ tri thức nghìn năm</p>
+            </div>
+            <div class="footer-links">
+                <h4>Liên kết</h4>
+                <a href="gioi-thieu.html">Giới thiệu</a>
+                <a href="lien-he.html">Liên hệ</a>
+                <a href="hoi-vien.html">Hội viên</a>
+            </div>
+            <div class="footer-links">
+                <h4>Thể loại</h4>
+                <a href="sach.html">Thư viện</a>
+                <a href="sach-hiem.html">Sách hiếm</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sudu Secret Vault. Dự án học tập.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            updateCartCount();
+        });
+    </script>
+</body>
+
+</html>

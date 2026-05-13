@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Thực Hành - Sudu Secret Vault</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">📜</span>
+                <span class="logo-text">Sudu Secret Vault</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="../index.html" class="nav-link">Trang chủ</a>
+                <a href="sach.html" class="nav-link">Thư viện</a>
+                <a href="sach-hiem.html" class="nav-link">Sách hiếm</a>
+                <a href="hoi-vien.html" class="nav-link">Hội viên</a>
+
+                <a href="gio-hang.html" class="nav-link cart-link">
+                    Giỏ hàng
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <a href="lab-thuc-hanh.html" class="nav-link active">Lab Thực Hành</a>
+            </nav>
+
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Tìm kiếm sách cổ...">
+                <button class="search-btn" onclick="searchBooks()">🔍</button>
+            </div>
+
+            <!-- Mobile Cart Icon -->
+            <!-- <a href="gio-hang.html" class="mobile-cart-link">
+                🛒
+                <span class="cart-count" id="mobile-cart-count">0</span>
+            </a> -->
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- ========== PAGE TITLE ========== -->
+    <div class="page-title">
+        <div class="container">
+            <h1>Lab Thực Hành</h1>
+            <p class="text-muted">Thực hành kỹ năng thiết kế web và trải nghiệm các bài lab sinh động.</p>
+        </div>
+    </div>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="labs">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="../index.html">Trang chủ</a> / <span>Lab Thực Hành</span>
+            </div>
+
+            <section>
+                <h2>Chủ đề Lab thực hành</h2>
+                <p class="text-muted" style="text-align:center; max-width:760px; margin:0 auto 40px;">
+                    Gồm các lab được thực hiện theo yêu cầu trên phòng lab của môn học Thiết kế Web. Mỗi lab bao gồm các
+                    bài tập thực hành với các chủ đề khác nhau, giúp bạn nâng cao kỹ năng thiết kế web và trải nghiệm
+                    các bài lab sinh động.
+                </p>
+
+                <div class="lab-grid">
+                    <div class="lab-card">
+                        <h3>Lab01: HTML</h3>
+                        <div class="lab-links-list">
+                            <a href="http://duongweb.somee.com/Lab01/Vi_du/lab1_bai3.html" class="item-link">Lab1_3</a>
+                            <a href="http://duongweb.somee.com/Lab01/Vi_du/lab1_bai4.html" class="item-link">Lab1_4</a>
+                        </div>
+                        <a href="#" class="lab-btn">Xem chi tiết</a>
+                    </div>
+
+                    <div class="lab-card">
+                        <h3>Lab02: Table & List</h3>
+                        <div class="lab-links-list">
+                            <a href="http://duongweb.somee.com/Lab02/lab02_bai1.html" class="item-link">Lab2_1</a>
+                            <a href="http://duongweb.somee.com/Lab02/lab02_bai2.html" class="item-link">Lab2_2</a>
+                            <a href="http://duongweb.somee.com/Lab02/lab02_khung_table.html"
+                                class="item-link">Lab2_3</a>
+                        </div>
+                        <a href="#" class="lab-btn">Xem chi tiết</a>
+                    </div>
+
+                    <div class="lab-card">
+                        <h3>Lab03: Frame & Form</h3>
+                        <div class="lab-links-list">
+                            <a href="http://duongweb.somee.com/Lab03/Lab03/Vi_du/Lab03_bai2.html"
+                                class="item-link">Lab3_1</a>
+                            <a href="http://duongweb.somee.com/Lab03/Lab03/Vi_du_Lab01/Lab03_bai2.html"
+                                class="item-link">Lab3_2</a>
+                            <a href="http://duongweb.somee.com/Lab03/Lab03/Vi_du_Lab01/Lab03_bai3.html
+" class="item-link">Lab3_3</a>
+                        </div>
+                        <a href="#" class="lab-btn">Xem chi tiết</a>
+                    </div>
+
+                    <div class="lab-card">
+                        <h3>Lab04: CSS Cơ bản</h3>
+                        <div class="lab-links-list">
+                            <a href="http://duongweb.somee.com/Lab04/Vi_du/lab04_bai1.html
+" class="item-link">Lab4_1</a>
+                            <a href="http://duongweb.somee.com/Lab04/Vi_du/lab04_bai2.html" class="item-link">Lab4_2</a>
+                            <a href="http://duongweb.somee.com/Lab04/Vi_du/lab04_bai3.html" class="item-link">Lab4_3</a>
+                        </div>
+                        <a href="#" class="lab-btn">Xem chi tiết</a>
+                    </div>
+
+                    <div class="lab-card">
+                        <h3>Lab05: Các thuộc tính CSS</h3>
+                        <div class="lab-links-list">
+                            <a href="labs/Lab05/Lab05/lab05_bai1.html" class="item-link">Lab5_1</a>
+                            <a href="labs/Lab05/Lab05/Bai_2/lab05_bai2.html" class="item-link">Lab5_2</a>
+                            <a href="labs/Lab05/Lab05/Bai_2/lab05_bai3.html" class="item-link">Lab5_3</a>
+                        </div>
+                        <a href="labs/Lab05/Lab05/index.html" class="lab-btn">Xem chi tiết</a>
+                    </div>
+
+                    <div class="lab-card">
+                        <h3>Lab06: Layout Responsive</h3>
+                        <div class="lab-links-list">
+                            <a href="labs/Lab06/lab6_bai1.html" class="item-link">Lab6_1</a>
+                            <a href="labs/Lab06/Bai_2_Minh_hoa_layout/lab6_bai2.html" class="item-link">Lab6_2</a>
+                            <a href="labs/Lab06/Bai_2_Minh_hoa_layout/lab6_bai3.html" class="item-link">Lab6_3</a>
+                        </div>
+                        <a href="labs/Lab06/index.html" class="lab-btn">Xem chi tiết</a>
+                    </div>
+
+                    <div class="lab-card">
+                        <h3>Lab07: JavaScript</h3>
+                        <div class="lab-links-list">
+                            <a href="labs/Lab07/Lab07/Vi_du/lab07_bai1.html" class="item-link">Lab7_1</a>
+                            <a href="labs/Lab07/Lab07/demo_bai_2/lab07_bai2.html" class="item-link">Lab7_2</a>
+                        </div>
+                        <a href="labs/Lab07/Lab07/index.html" class="lab-btn">Xem chi tiết</a>
+                    </div>
+
+                    <div class="lab-card">
+                        <h3>Lab08: JavaScript nâng cao</h3>
+                        <div class="lab-links-list">
+                            <a href="labs/Lab08/lab08_bai1.html" class="item-link">Lab8_1</a>
+                            <a href="labs/Lab08/lab08_bai2.html" class="item-link">Lab8_2</a>
+                            <a href="labs/Lab08/lab08_bai3.html" class="item-link">Lab8_3</a>
+                        </div>
+                        <a href="labs/Lab08/index.html" class="lab-btn">Xem chi tiết</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">📜</span>
+                <span class="logo-text">Sudu Secret Vault</span>
+                <p class="footer-tagline">Gìn giữ tri thức nghìn năm</p>
+            </div>
+            <div class="footer-links">
+                <h4>Liên kết</h4>
+                <a href="gioi-thieu.html">Giới thiệu</a>
+                <a href="lien-he.html">Liên hệ</a>
+                <a href="hoi-vien.html">Hội viên</a>
+            </div>
+            <div class="footer-links">
+                <h4>Thể loại</h4>
+                <a href="sach.html">Thư viện</a>
+                <a href="sach-hiem.html">Sách hiếm</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sudu Secret Vault. Dự án học tập.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            updateCartCount();
+        });
+    </script>
+</body>
+
+</html>

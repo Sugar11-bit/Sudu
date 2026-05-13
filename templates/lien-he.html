@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - Sudu Secret Vault</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">📜</span>
+                <span class="logo-text">Sudu Secret Vault</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="../index.html" class="nav-link">Trang chủ</a>
+                <a href="sach.html" class="nav-link">Thư viện</a>
+                <a href="sach-hiem.html" class="nav-link">Sách hiếm</a>
+                <a href="hoi-vien.html" class="nav-link">Hội viên</a>
+                <a href="gio-hang.html" class="nav-link cart-link">
+                    Giỏ hàng
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <a href="lab-thuc-hanh.html" class="nav-link">Lab Thực Hành</a>
+            </nav>
+
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Tìm kiếm sách cổ...">
+                <button class="search-btn" onclick="searchBooks()">🔍</button>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- ========== PAGE TITLE ========== -->
+    <div class="page-title">
+        <div class="container">
+            <h1>✉️ Liên hệ với chúng tôi</h1>
+            <p class="text-muted">Chúng tôi luôn sẵn sàng lắng nghe bạn</p>
+        </div>
+    </div>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="library-page">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="../index.html">Trang chủ</a> / <span>Liên hệ</span>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="contact-form" onsubmit="handleContactForm(event)">
+                <h2 class="text-center mb-lg">Gửi tin nhắn</h2>
+
+                <div class="form-group">
+                    <label for="contact-name">Họ và tên *</label>
+                    <input type="text" id="contact-name" required placeholder="Nhập họ và tên">
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-email">Email *</label>
+                    <input type="email" id="contact-email" required placeholder="Nhập email">
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-subject">Chủ đề</label>
+                    <select id="contact-subject">
+                        <option value="">-- Chọn chủ đề --</option>
+                        <option value="support">Hỗ trợ kỹ thuật</option>
+                        <option value="order">Thắc mắc về đơn hàng</option>
+                        <option value="book">Yêu cầu sách mới</option>
+                        <option value="partnership">Hợp tác</option>
+                        <option value="other">Khác</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-message">Nội dung tin nhắn *</label>
+                    <textarea id="contact-message" required placeholder="Nhập nội dung tin nhắn..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-accent" style="width: 100%; justify-content: center;">
+                    📤 Gửi tin nhắn
+                </button>
+            </form>
+
+            <!-- Contact Info -->
+            <div class="member-benefits" style="margin-top: 3rem;">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📧</div>
+                    <h3 class="benefit-title">Email</h3>
+                    <p class="benefit-desc">contact@suduvault.com</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📞</div>
+                    <h3 class="benefit-title">Hotline</h3>
+                    <p class="benefit-desc">1900-xxxx-xx</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🕐</div>
+                    <h3 class="benefit-title">Giờ làm việc</h3>
+                    <p class="benefit-desc">T2-T6: 9:00 - 18:00</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">📜</span>
+                <span class="logo-text">Sudu Secret Vault</span>
+                <p class="footer-tagline">Gìn giữ tri thức nghìn năm</p>
+            </div>
+            <div class="footer-links">
+                <h4>Liên kết</h4>
+                <a href="gioi-thieu.html">Giới thiệu</a>
+                <a href="lien-he.html">Liên hệ</a>
+                <a href="hoi-vien.html">Hội viên</a>
+            </div>
+            <div class="footer-links">
+                <h4>Thể loại</h4>
+                <a href="sach.html">Thư viện</a>
+                <a href="sach-hiem.html">Sách hiếm</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sudu Secret Vault. Dự án học tập.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            updateCartCount();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu - Sudu Secret Vault</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">📜</span>
+                <span class="logo-text">Sudu Secret Vault</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="../index.html" class="nav-link">Trang chủ</a>
+                <a href="sach.html" class="nav-link">Thư viện</a>
+                <a href="sach-hiem.html" class="nav-link">Sách hiếm</a>
+                <a href="hoi-vien.html" class="nav-link">Hội viên</a>
+                <a href="gio-hang.html" class="nav-link cart-link">
+                    Giỏ hàng
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <a href="lab-thuc-hanh.html" class="nav-link">Lab Thực Hành</a>
+            </nav>
+
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Tìm kiếm sách cổ...">
+                <button class="search-btn" onclick="searchBooks()">🔍</button>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- ========== PAGE TITLE ========== -->
+    <div class="page-title">
+        <div class="container">
+            <h1>📖 Về Sudu Secret Vault</h1>
+            <p class="text-muted">Câu chuyện về kho tàng tri thức cổ đại</p>
+        </div>
+    </div>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="library-page">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="../index.html">Trang chủ</a> / <span>Giới thiệu</span>
+            </div>
+
+            <!-- About Content -->
+            <div class="about-content" style="margin-top: 2rem;">
+                <div class="about-text">
+                    <h2 class="text-accent mb-md">Sứ mệnh của chúng tôi</h2>
+                    <p class="mb-md">
+                        <strong>Sudu Secret Vault</strong> ra đời với mục tiêu gìn giữ và lan tỏa những kiến thức cổ đại
+                        quý báu đến với thế hệ độc giả hiện đại.
+                    </p>
+                    <p class="mb-md">
+                        Chúng tôi tin rằng trong những cuốn sách cổ - từ Sơn Hải Kinh, Kinh Dịch, đến các văn bản bí
+                        truyền phương Đông và phương Tây - đều chứa đựng những tri thức vượt thời gian về vũ trụ, con
+                        người và tự nhiên.
+                    </p>
+                    <p class="mb-md">
+                        Với đội ngũ chuyên gia về văn bản cổ, ngôn ngữ học và lịch sử, chúng tôi cẩn trọng số hóa, dịch
+                        thuật và chú giải từng trang sách, đảm bảo độc giả có thể tiếp cận những kiến thức này một cách
+                        dễ hiểu nhất.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <div class="mystical-book">
+                        <span class="book-glow"></span>
+                        🏛️
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="title-decoration">✦</span>
+                    Điều gì làm nên sự khác biệt?
+                    <span class="title-decoration">✦</span>
+                </h2>
+                <div class="member-benefits">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📚</div>
+                        <h3 class="benefit-title">Sách cổ chính thống</h3>
+                        <p class="benefit-desc">Mọi văn bản đều được xác thực nguồn gốc và dịch thuật bởi chuyên gia.
+                        </p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🔍</div>
+                        <h3 class="benefit-title">Chú giải chi tiết</h3>
+                        <p class="benefit-desc">Mỗi cuốn sách đi kèm chú thích, giải nghĩa và bối cảnh lịch sử.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🌟</div>
+                        <h3 class="benefit-title">Nội dung độc quyền</h3>
+                        <p class="benefit-desc">Nhiều văn bản hiếm chưa từng được công bố rộng rãi.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💎</div>
+                        <h3 class="benefit-title">Trải nghiệm Premium</h3>
+                        <p class="benefit-desc">Giao diện đọc sách được thiết kế tối ưu cho việc nghiên cứu.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quote -->
+            <div class="question-gate" style="max-width: 800px; margin: 3rem auto;">
+                <h3>📜 Lời ngỏ</h3>
+                <p style="font-size: 1.25rem; text-align: center;">
+                    "Tri thức cổ đại không phải để thờ phụng, mà để học hỏi và ứng dụng. Mỗi trang sách cổ là một cánh
+                    cửa dẫn đến sự hiểu biết sâu sắc hơn về thế giới và chính mình."
+                </p>
+                <p class="text-center text-muted mt-lg">— Người sáng lập Sudu Secret Vault</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">📜</span>
+                <span class="logo-text">Sudu Secret Vault</span>
+                <p class="footer-tagline">Gìn giữ tri thức nghìn năm</p>
+            </div>
+            <div class="footer-links">
+                <h4>Liên kết</h4>
+                <a href="gioi-thieu.html">Giới thiệu</a>
+                <a href="lien-he.html">Liên hệ</a>
+                <a href="hoi-vien.html">Hội viên</a>
+            </div>
+            <div class="footer-links">
+                <h4>Thể loại</h4>
+                <a href="sach.html">Thư viện</a>
+                <a href="sach-hiem.html">Sách hiếm</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sudu Secret Vault. Dự án học tập.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            updateCartCount();
+        });
+    </script>
+</body>
+
+</html>

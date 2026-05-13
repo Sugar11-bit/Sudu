@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán - Sudu Secret Vault</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">📜</span>
+                <span class="logo-text">Sudu Secret Vault</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="../index.html" class="nav-link">Trang chủ</a>
+                <a href="sach.html" class="nav-link">Thư viện</a>
+                <a href="sach-hiem.html" class="nav-link">Sách hiếm</a>
+                <a href="hoi-vien.html" class="nav-link">Hội viên</a>
+                <a href="gio-hang.html" class="nav-link cart-link">
+                    Giỏ hàng
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+                <a href="lab-thuc-hanh.html" class="nav-link">Lab Thực Hành</a>
+            </nav>
+
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Tìm kiếm sách cổ...">
+                <button class="search-btn" onclick="searchBooks()">🔍</button>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- ========== PAGE TITLE ========== -->
+    <div class="page-title">
+        <div class="container">
+            <h1>💳 Thanh toán</h1>
+            <p class="text-muted">Hoàn tất đơn hàng của bạn</p>
+        </div>
+    </div>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="checkout-page">
+        <div class="checkout-container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="../index.html">Trang chủ</a> /
+                <a href="gio-hang.html">Giỏ hàng</a> /
+                <span>Thanh toán</span>
+            </div>
+
+            <form class="checkout-form" onsubmit="handleCheckout(event)">
+                <h2 class="mb-md">Thông tin thanh toán</h2>
+
+                <!-- Order Summary -->
+                <div class="checkout-summary">
+                    <h3 class="mb-sm text-accent">Đơn hàng của bạn</h3>
+                    <div id="checkout-items">
+                        <!-- Items will be loaded by JavaScript -->
+                    </div>
+                    <div class="checkout-total" id="checkout-total">
+                        <span>Tổng cộng:</span>
+                        <span>0 ₫</span>
+                    </div>
+                </div>
+
+                <!-- Customer Info -->
+                <div class="form-group">
+                    <label for="checkout-name">Họ và tên *</label>
+                    <input type="text" id="checkout-name" required placeholder="Nhập họ và tên">
+                </div>
+
+                <div class="form-group">
+                    <label for="checkout-email">Email *</label>
+                    <input type="email" id="checkout-email" required placeholder="Nhập email">
+                </div>
+
+                <div class="form-group">
+                    <label for="checkout-phone">Số điện thoại</label>
+                    <input type="tel" id="checkout-phone" placeholder="Nhập số điện thoại">
+                </div>
+
+                <!-- Payment Method -->
+                <div class="form-group">
+                    <label for="payment-method">Phương thức thanh toán *</label>
+                    <select id="payment-method" required>
+                        <option value="">-- Chọn phương thức --</option>
+                        <option value="bank">Chuyển khoản ngân hàng</option>
+                        <option value="momo">Ví MoMo</option>
+                        <option value="zalopay">ZaloPay</option>
+                        <option value="cod">Thanh toán khi nhận (COD)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkout-note">Ghi chú</label>
+                    <input type="text" id="checkout-note" placeholder="Ghi chú thêm (nếu có)">
+                </div>
+
+                <button type="submit" class="btn btn-accent" style="width: 100%; justify-content: center;">
+                    ✓ Xác nhận thanh toán
+                </button>
+
+                <a href="gio-hang.html" class="btn btn-outline mt-sm" style="width: 100%; justify-content: center;">
+                    ← Quay lại giỏ hàng
+                </a>
+            </form>
+        </div>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">📜</span>
+                <span class="logo-text">Sudu Secret Vault</span>
+                <p class="footer-tagline">Gìn giữ tri thức nghìn năm</p>
+            </div>
+            <div class="footer-links">
+                <h4>Liên kết</h4>
+                <a href="gioi-thieu.html">Giới thiệu</a>
+                <a href="lien-he.html">Liên hệ</a>
+                <a href="hoi-vien.html">Hội viên</a>
+            </div>
+            <div class="footer-links">
+                <h4>Thể loại</h4>
+                <a href="sach.html">Thư viện</a>
+                <a href="sach-hiem.html">Sách hiếm</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sudu Secret Vault. Dự án học tập.</p>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderCheckoutSummary();
+            updateCartCount();
+        });
+    </script>
+</body>
+
+</html>
