@@ -1157,7 +1157,7 @@ img {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-xl);
     margin-bottom: var(--spacing-lg);
 }
@@ -1185,6 +1185,7 @@ img {
     padding: var(--spacing-sm);
     background: rgba(255, 255, 255, 0.04);
     border-radius: var(--radius-lg);
+    min-height: fit-content;
 }
 
 .footer-links a {
@@ -1210,12 +1211,52 @@ img {
     transform: translateX(4px);
 }
 
+/* Map Container */
+.footer-map {
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+.footer-map h4 {
+    padding: var(--spacing-sm);
+    margin-bottom: 0.5rem;
+}
+
+.map-container {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: var(--radius-lg);
+}
+
 .footer-bottom {
     text-align: center;
-    padding-top: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-sm) var(--spacing-md);
     border-top: 1px solid var(--color-bg-card);
     color: var(--color-text-alt);
-    font-size: 0.85rem;
+    font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+    line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.footer-bottom p {
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    line-height: inherit;
 }
 
 /* ========== ANIMATIONS ========== */
@@ -1297,6 +1338,17 @@ img {
 }
 
 /* ========== RESPONSIVE ========== */
+@media (max-width: 990px) {
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .footer-bottom {
+        padding: var(--spacing-md) var(--spacing-xs) var(--spacing-md);
+        font-size: clamp(0.7rem, 2.2vw, 0.85rem);
+    }
+}
+
 @media (max-width: 768px) {
     body {
         padding-top: 160px;
@@ -1351,8 +1403,42 @@ img {
         text-align: center;
     }
 
+    .footer-links h4 {
+        text-align: center;
+    }
+
+    .footer-links {
+        background: rgba(255, 255, 255, 0.04);
+    }
+
+    .footer-map h4 {
+        text-align: center;
+    }
+
+    .footer-bottom {
+        padding: var(--spacing-md) var(--spacing-xs);
+        font-size: clamp(0.65rem, 1.8vw, 0.8rem);
+        line-height: 1.5;
+    }
+
     .books-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+/* Mobile Small (480px and below) */
+@media (max-width: 480px) {
+    .footer-bottom {
+        padding: var(--spacing-md) var(--spacing-xs) var(--spacing-md);
+        font-size: clamp(0.6rem, 1.5vw, 0.75rem);
+        line-height: 1.4;
+        word-spacing: 0.05em;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+        padding: 0;
+        font-size: inherit;
     }
 }
 
