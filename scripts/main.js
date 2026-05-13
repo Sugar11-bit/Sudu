@@ -288,8 +288,8 @@ booksData.forEach(book => {
 });
 
 function getUserUnlockedBooks(user) {
-    if (!user || !Array.isArray(user.unlockedBooks)) return [];
-    return user.unlockedBooks;
+    if (user && Array.isArray(user.unlockedBooks)) return user.unlockedBooks;
+    return getAnonymousUnlockedBooks();
 }
 
 function resetBookLockState() {
@@ -297,7 +297,7 @@ function resetBookLockState() {
     const unlocked = getUserUnlockedBooks(user);
     booksData.forEach(book => {
         book.isLocked = book.defaultIsLocked;
-        if (user && unlocked.includes(book.id)) {
+        if (unlocked.includes(book.id)) {
             book.isLocked = false;
         }
     });
@@ -311,6 +311,20 @@ let selectedAnswer = -1;
 function getTemplatesPath(relativePath) {
     const currentPath = window.location.pathname.replace(/\\/g, '/');
     return currentPath.includes('/templates/') ? relativePath : `templates/${relativePath}`;
+}
+
+function getImagePath(imagePath) {
+    const normalized = imagePath.replace(/^\.\.?\//, '');
+    const currentPath = window.location.pathname.replace(/\\/g, '/');
+    return currentPath.includes('/templates/') ? `../${normalized}` : normalized;
+}
+
+function getAnonymousUnlockedBooks() {
+    return JSON.parse(localStorage.getItem('suduUnlockedBooks') || '[]');
+}
+
+function saveAnonymousUnlockedBooks(unlockedBooks) {
+    localStorage.setItem('suduUnlockedBooks', JSON.stringify(unlockedBooks));
 }
 
 // ========== AUTH FUNCTIONS ==========
@@ -779,7 +793,7 @@ function createBookCard(book) {
             ${premiumBadge}
             <div class="book-card-image">
                 <a href="${getTemplatesPath('chi-tiet-sach.html')}?id=${book.id}">
-                    <img src="${book.image}" alt="${book.title}" 
+                    <img src="${getImagePath(book.image)}" alt="${book.title}" 
                          onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 400%22><rect fill=%22%232A2A4A%22 width=%22300%22 height=%22400%22/><text x=%22150%22 y=%22200%22 text-anchor=%22middle%22 fill=%22%235E1DAD%22 font-size=%2248%22>📖</text></svg>'">
                     <div class="book-card-overlay"></div>
                 </a>
@@ -825,7 +839,7 @@ function renderCart() {
 
     cartContainer.innerHTML = cart.map(item => `
         <div class="cart-item fade-in">
-            <img src="${item.image}" alt="${item.title}" class="cart-item-image"
+            <img src="${getImagePath(item.image)}" alt="${item.title}" class="cart-item-image"
                  onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 120%22><rect fill=%22%232A2A4A%22 width=%22100%22 height=%22120%22/><text x=%2250%22 y=%2260%22 text-anchor=%22middle%22 fill=%22%235E1DAD%22 font-size=%2224%22>📖</text></svg>'">
             <div class="cart-item-info">
                 <h3 class="cart-item-title">${item.title}</h3>
@@ -903,7 +917,7 @@ function loadProductDetail() {
     container.innerHTML = `
         <div class="product-container">
             <div class="product-image">
-                <img src="../${book.image}" alt="${book.title}"
+                <img src="${getImagePath(book.image)}" alt="${book.title}"
                      onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 500%22><rect fill=%22%232A2A4A%22 width=%22400%22 height=%22500%22/><text x=%22200%22 y=%22250%22 text-anchor=%22middle%22 fill=%22%235E1DAD%22 font-size=%2272%22>📖</text></svg>'">
             </div>
             <div class="product-info">
@@ -940,6 +954,11 @@ function answerQuestion(bookId, selectedIndex) {
             }
             setCurrentUser(user);
         } else {
+            const unlocked = getAnonymousUnlockedBooks();
+            if (!unlocked.includes(book.id)) {
+                unlocked.push(book.id);
+                saveAnonymousUnlockedBooks(unlocked);
+            }
             book.isLocked = false;
         }
         showToast('Chúc mừng! Bạn đã mở khóa cuốn sách.', 'success');
